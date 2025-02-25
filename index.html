@@ -27,6 +27,7 @@
         }
 
         nav {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -719,11 +720,44 @@
             }
 
             .nav-links.active {
-                display: flex;
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #ffffff;
+                z-index: 1000;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                width: 100%;
             }
 
             .hamburger-menu {
                 display: flex
+            }
+            
+            nav ul li {
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+                margin: 0;
+            }
+
+            .hamburger-menu.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger-menu.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            
+            .hamburger-menu span {
+                transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
             .nav .lang-switch {
@@ -1003,40 +1037,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll("nav ul li a");
             const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
-    
-            if (navLinks.length > 0) {
-                navLinks[0].classList.add("selected");
-            }
-    
-            function showPage(index) {
-                pages.forEach((page, i) => {
-                    if (i === index) {
-                        page.style.display = "block";
-                    } else {
-                        page.style.display = "none";
-                    }
-                });
-            }
-    
-            navLinks.forEach((link, index) => {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault();
-    
-                    navLinks.forEach(nav => nav.classList.remove("selected"));
-                    this.classList.add("selected");
-    
-                    showPage(index);
-                });
-            });
-    
-            showPage(0);
-        });
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll("nav ul li a");
-            const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
 
             function showPage(index) {
                 pages.forEach((page, i) => {
@@ -1095,9 +1095,19 @@
 
             hamburgerMenu.addEventListener("click", function () {
                 navLinks.classList.toggle("active");
+                this.classList.toggle("active");
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove("active");
+                    hamburgerMenu.classList.remove("active");
+                });
             });
         });
     </script>
+
+    
 
     <div class="page-1">
          <!-- Section 1 -->
