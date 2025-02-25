@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>MBC Website</title>
+    <style>
+        :root {
+            font-size: 14px;
+        }
+        @font-face {
+            font-family: 'Acumin Pro Bold';
+            src: url('./assets/fonts/Acumin-BdPro.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Acumin Pro';
+            src: url('./assets/fonts/Acumin-RPro.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5vh 5vw;
+            background-color: #ffffff;
+            border-bottom: 2px solid #f1f4fb;
+            height: 25vh;
+            width:100%;
+        }
+
+        nav .logo {
+            width: 20%;
+        }
+
+        nav ul {
+            display:flex;
+            justify-content: end;
+            width: 50%;
+            padding-right:30%;
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 3vw;
+        }
+
+        nav ul li {
+            margin: 0 0;
+            padding: 0px 3%;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            color: #202529;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a.selected {
+            color: #ea7900;
+            font-weight: bold; 
+        }
+        
+
+        nav ul li:hover{
+            transition: transform 0.7 ease;
+        }
+
+        nav ul li:hover{
+            transform: translateY(-0.5px);
+        }
+
+        nav ul li a:hover {
+            color: #ea7900;
+            text-decoration: none;
+        }
+
+        nav .lang-switch {
+            width:20%;
+            display: flex;
+            justify-content: end;
+            font-family: 'Acumin Pro', sans-serif;
+            font-size: 1.15rem;
+        }
+        
+        nav .lang-switch span {
+            margin-left: 1vw;
+            cursor: pointer;
+            transition: transform 0.7 ease, color 0.3 ease;
+            color: #000000;
+        }
+
+        nav .lang-switch span:hover{
+            transform: translateY(-1px);
+            color:rgba(0,0,0,0.8);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Acumin Pro', sans-serif;
+            color: #202529;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section-1 {
+            background-image: url('assets/image_1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            height: 115vh;
+            display: flex;
+            justify-content: top;
+            align-items: center; 
+            position: relative;
+            background-color: #69c0d1;
+        }
+
+        .section-1 h1 {
+            font-size: 4rem;
+            margin-top: 10vh;
+            text-transform: uppercase;
+            color: #003853;
+        }
+
+        .section-1 h3 {
+            font-size: 2.25rem;
+            text-transform: uppercase;
+            margin-top: -2vh;
+            color: #003853;
+        }
+
+        .section-2 {
+            background-color: #f1f4fb;
+            color: #202529;
+            display:flex;
+            flex-direction: row;
+            height: 95vh;
+            padding-top: 10vh;
+            padding-bottom: 12vh;
+        }
+
+        .section-2 h2 {
+            font-size: 1.75rem;
+            margin-bottom: 2vh;
+            text-align: left;
+            color: #ea7900;
+        }
+        
+        .section-2 p {
+            font-size: 1.25rem;
+            line-height: 30px;
+            margin-bottom: 2vh;
+            padding: 0 0;
+            text-align: left;
+            font-family: 'Acumin Pro', sans-serif;
+        }
+
+        .section-2-img-div{
+            width:45%; 
+            height: 100%;
+        }
+        
+        .section-2 img {
+            max-width: 100%;
+            height: auto;
+            padding-left: 4vw;
+        }
+
+        .section-2-text-div{
+            width:55%;
+            height:100%;
+            padding-left: 5%;
+            padding-right:15px
+        }
+
+        .h2-style{
+            display:flex;
+            flex-direction:row;
+        }
+
+        .section-3 {
+            background-color: #8cc6dd;
+            color: #003853;
+            height: 125vh;
+        }
+
+        .section-3 h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5vh;
+        }
+
+        .section-3 h2 {
+            font-size: 2.5rem;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .section-3 .content {
+            display: flex;
+            flex-direction: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 3vh;
+            height:45%; 
+            width:100%
+        }
+        
+        .title-div{
+            height:20%;
+            padding-top: 10vh;
+            width:100%
+        }
+
+        .subsect {
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30%;
+            height: 100%;
+            padding: 2.5vh;
+        }
+
+        .subtext{
+            font-family: 'Acumin Pro Bold', sans-serif;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color:#003853;
+            width: 90%;
+            padding-top: 2vh;
+        }
+
+        .section-3 img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .contact-us-div{
+            height:35%;
+            padding-bottom: 3vh;
+        }
+
+        .contact-us-title{
+            height:50%;
+            display:flex;
+            align-items: end;
+            padding-bottom: 3vh;
+        }
+
+        .button {
+            background-color: #f1f4fb;
+            color: #202529;
+            padding: 1vh 2.5vw;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.1rem;
+            transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+            border-radius: 3px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: rgba(220, 230, 240, 1);
+            border-color: rgba(180, 200, 220, 1); 
+            transform: translateY(-1px);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        .page-1,
+        .page-2,
+        .page-3 {
+            display: none; 
+        }
+
+        .page-1 {
+            display: block;
+        }
+
+        /* Page 2 styles */
+        .p2-section-1{
+            background-color: #f1f4fb;
+            color: #202529;
+            height: 115vh;
+            padding-top: 5%;
+            padding-bottom: 7%; 
+        }
+
+        .p2-section-1-div{
+            display:flex; 
+            flex-direction: row; 
+            height:70%
+        }
+
+        .p2-section-1-title{
+            height:30%
+        }
+
+        .p2-section-1-text{
+            width:55%; 
+            height:100%; 
+            padding-right:15px; 
+            padding-left: 5%;
+        }
+        
+        .p2-section-1 p {
+            font-size: 1.25rem;
+            line-height: 30px;
+            margin-bottom: 2%;
+            text-align: left;
+            font-family: 'Acumin Pro', sans-serif;
+            padding-right: 5%;
+        }
+        
+        .p2-section-1 img {
+            max-width: 100%;
+            height: auto;
+            padding-left: 4vw;
+        }
+
+        .p2-section-1 h2{
+            color: #003853;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .p2-section-2{
+            background-image: url('assets/image_7.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 55vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2vh;
+        }
+
+        .ipo-title {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 2.0rem;
+            color: #f41361;
+            margin: 0 0 1vh 0;
+            text-transform: uppercase;
+        }
+
+        .ipo-description {
+            font-family: 'Acumin Pro', sans-serif;
+            font-size: 1.5rem;
+            line-height: 38px;
+            color: #32e3f7; 
+        }
+
+        /* Section 3 */
+        .p2-section-3 {
+            position: relative;
+            background-color: #abcfff;
+            color: #003853;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            width:100%
+        }
+
+        .services-background {
+            background-image: url('assets/image_8.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 1200px;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 7%;
+            padding-top:5%;
+        }
+
+        .services-content {
+            padding: 2vh;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+
+        .services-title {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 2.5rem;
+            color: #003853;
+            margin-bottom: 2vh;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.25rem;
+            line-height: 46px;
+            color: #003853;
+        }
+
+        .services-list li {
+            margin-bottom: 1vh;
+            position: relative;
+            font-size: 1.25rem;
+            padding-left: 1.5vw;
+        }
+
+        .services-list li::before {
+            content: "•";
+            color: #003853;
+            position: absolute;
+            font-size: 2rem;
+            left: 0;
+            line-height: 46px;
+        }
+
+        .call-to-action {
+            margin-top: 10vh;
+            color: #202529;
+            text-align: center;
+            width: 100%;
+            padding-right: 4vw;
+            display: flex;
+            align-items:flex-start;
+            flex-direction: column;
+        }
+
+        .call-to-action h2 {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.75rem;
+            color: #003853;
+            margin-bottom: 5vh;
+            text-align: left;
+        }
+
+        /* Page 3 */
+
+        .p3-section-1{
+            background-color: #f1f4fb;
+            color: #202529;
+            height: 105vh;
+            padding-top: 5%;
+            padding-bottom: 7%; 
+        }
+
+        .p3-section-1-div{
+            display:flex; 
+            flex-direction: row;
+            padding-top:3%;
+            height:70%
+        }
+
+        .p3-section-1-title{
+            height:30%
+        }
+
+        .p3-section-1-img{
+            width:45%; 
+            height: 100%;
+        }
+
+        .p3-section-1-text{
+            width:50%;
+            height:100%; 
+            padding-right:15px;
+            padding-left: 5%;
+        }
+        
+        .p3-section-1 p {
+            font-size: 1.25rem;
+            line-height: 30px;
+            margin-bottom: 2vh;
+            text-align: left;
+            font-family: 'Acumin Pro', sans-serif;
+            padding-right: 5%;
+        }
+        
+        .p3-section-1 img {
+            max-width: 100%;
+            height: auto;
+            padding-left: 3vw;
+        }
+
+        .p3-section-1 h2{
+            color: #003853;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size:2.5rem;
+            font-weight: bold;
+        }
+
+        /* Section 2 */
+        .p3-section-2 {
+            background-image: url('assets/image_10.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #0594b4;
+            color: #ffffff;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 2vh;
+            height: 50vh;
+            text-align: left;
+        }
+
+        .section-text {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.6rem;
+            line-height: 38px;
+            color: #ffffff;
+            margin: 0;
+            height: 100%;
+            width:100%;
+            max-width: 500px;
+            text-align: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        /* Section 3 */
+        .p3-section-3 {
+            background-color: #c7d0d5;
+            padding: 3vw 2vh;
+            text-align: center;
+            width:100%;
+            position: relative;
+            padding-bottom: 3vh;
+        }
+
+        .team-title {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 2.6rem;
+            color: #003853;
+            margin-bottom: 3vh;
+        }
+
+        .team-member {
+            margin-bottom: 3.2vh;
+            text-align: center;
+            width: 100%;
+            align-items: center;
+        }
+
+        .team-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1vh;
+        }
+
+        .team-member h3 {
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.25rem;
+            color: #003853;
+            margin: 0.5vw 0;
+        }
+
+        .team-role {
+            font-family: 'Acumin Pro', sans-serif;
+            font-size: 1.15rem;
+            color: #003853;
+            margin-bottom: 1vh;
+        }
+
+        .bio-toggle {
+            background-color: #f1f4fb;
+            color: #202529;
+            padding: 8px 20px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            font-size: 1.15rem;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border-radius: 3px;
+            margin-bottom: 0.5vh;
+            outline: none;
+        }
+
+        .bio-toggle:hover {
+            background-color: rgba(220, 230, 240, 1);
+            color: #202529;
+        }
+
+        .bio-toggle:focus,
+        .bio-toggle:active {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px solid #d6d8db;
+            margin: 0.5vw 0;
+            width:75%;
+            transition: margin-top 0.3s ease;
+        }
+
+        .bio-content {
+            display: none;
+            padding: 1.5vh;
+            border-radius: 5px;
+            font-family: 'Acumin Pro', sans-serif;
+            font-size: 1.25rem;
+            color: #202529;
+            margin-top: 10px;
+            text-align: left;
+            width:75%
+        }
+
+        .bio-content.active {
+            display: block;
+        }
+
+        footer {
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            padding: 5vh;
+            background-color: #3f5c6c;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #69c0d1;
+        }
+
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            align-items: flex-end;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            height: 2px;
+            width: 25px;
+            background-color: black;
+        }
+
+        @media (max-width: 600px) {
+            :root{
+                font-size:11px
+            }
+
+            nav .logo {
+                width: 40%;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger-menu {
+                display: flex
+            }
+
+            .nav .lang-switch {
+                display: none;
+            }
+
+            /* Page 1 */
+            .section-2{
+                flex-direction: column;
+                height: auto;
+            }
+            .section-2-img-div{   
+                width:90%; 
+                height: 100%;
+            }
+            .section-2-text-div{
+                width:90%;
+                padding:4vh;
+            }
+            .h2-style{
+                flex-direction: column;
+            }
+
+            .section-3{
+                height: auto;
+            }
+
+            .section-3 .content {
+                flex-direction: column;
+            }
+
+            .section-3 .subsect{
+                width:100%
+            }
+
+            .section-3 .subtext{
+                padding-top:3vh;
+                font-size:1.5rem;
+            }
+
+            .section-3 .contact-us-div{
+                padding: 10vh 0;
+            }
+
+            .button{
+                width: 50vw;
+                height: 7.5vh;
+            }
+
+            /* Page 2 */
+            .p2-section-1{
+                height: auto;
+            } 
+
+            .p2-section-1 h2{
+                font-size: 2rem;
+            }
+
+            .p2-section-1-div{
+                flex-direction: column;
+            }
+
+            .p2-section-1-title{
+                height: 20%;
+            }
+
+            .p2-section-1-text{
+                width: 90%;
+                padding-top: 3vh;
+            }
+
+            .p2-section-1-text p2{
+                text-align: justify;
+                text-justify: inter-word; 
+            }
+
+            .ipo-title{
+                font-size: 1.75rem;
+            }
+
+            .ipo-description {
+                font-size: 1.25rem;
+            }
+            /* Page 3 */
+            .p3-section-1{
+                height: auto;
+            }
+
+            .p3-section-1-title{
+                height: 20%;
+                font-size: 2rem;
+            }
+
+            .p3-section-1-div{
+                flex-direction: column;
+            }
+
+            .p3-section-1-img{
+                width:100%;
+                padding: 2.5vh; 
+            }
+
+            .p3-section-1-text{
+                width: 100%;
+                padding: 5vh;
+            }
+
+            .p3-section-1-text p2{
+                text-align: justify;
+                text-justify: inter-word; 
+            }
+            
+            .bio-content{
+                width: 100%;
+                padding: 2vh 4vw;
+            }
+
+            .bio-content p2{
+                text-align: justify;
+                text-justify: inter-word; 
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav bar -->
+    <nav>
+        <div class="logo">
+            <img src="assets/MBC_charcoal_logo.png" style="width:100%">
+        </div>
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Découvrez-nous</a></li>
+            <li><a href="#">Expertise</a></li>
+            <li><a href="#">Notre équipe</a></li>
+        </ul> 
+        <div class="lang-switch">
+                <span>EN</span>
+                <span>FR</span>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("nav ul li a");
+            const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
+    
+            if (navLinks.length > 0) {
+                navLinks[0].classList.add("selected");
+            }
+    
+            function showPage(index) {
+                pages.forEach((page, i) => {
+                    if (i === index) {
+                        page.style.display = "block";
+                    } else {
+                        page.style.display = "none";
+                    }
+                });
+            }
+    
+            navLinks.forEach((link, index) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+    
+                    navLinks.forEach(nav => nav.classList.remove("selected"));
+                    this.classList.add("selected");
+    
+                    showPage(index);
+                });
+            });
+    
+            showPage(0);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("nav ul li a");
+            const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
+
+            function showPage(index) {
+                pages.forEach((page, i) => {
+                    if (i === index) {
+                        page.style.display = "block";
+                    } else {
+                        page.style.display = "none";
+                    }
+                });
+            }
+
+            navLinks.forEach((link, index) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    navLinks.forEach(nav => nav.classList.remove("selected"));
+
+                    this.classList.add("selected");
+
+                    showPage(index);
+                });
+            });
+
+            showPage(0);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bioToggles = document.querySelectorAll(".bio-toggle");
+
+            bioToggles.forEach((button) => {
+                button.addEventListener("click", function () {
+                    const targetId = this.getAttribute("data-target");
+                    const bioContent = document.querySelector(targetId);
+                    const divider = document.querySelector(`#divider-${targetId.split('-')[1]}`);
+
+                    // Toggle the 'active' class to show or hide the bio content
+                    bioContent.classList.toggle("active");
+
+                    // Adjust divider margin
+                    if (bioContent.classList.contains("active")) {
+                        divider.style.marginTop = "15px";
+                    } else {
+                        divider.style.marginTop = "0px";
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerMenu = document.querySelector(".hamburger-menu");
+            const navLinks = document.querySelector(".nav-links");
+
+            hamburgerMenu.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+
+    <div class="page-1">
+         <!-- Section 1 -->
+         <div class="section section-1 text-center">
+                 <h1>Des partenaires de confiance </h1>
+                 <h3>sur les marchés des capitaux </h3>
+         </div>
+     
+         <!-- Section 2 -->
+         <div class="section section-2">
+             <div class="section-2-img-div">
+                 <img src="assets/image_2.jpg" alt="Expertise Image">
+             </div>
+             <div class="section-2-text-div">
+                <div class="h2-style">
+                    <h2>Une expertise approfondie.&nbsp; </h2>
+                    <h2>Des résultats éprouvés.</h2>
+                </div>   
+                 <p>
+                    Fondée en 1983 sous le nom MaisonBrison Communications, MBC Capital Markets Advisors 
+                    (« MBC ») est l’une des plus importantes sociétés de conseils au Canada spécialisées 
+                    dans les relations avec les investisseurs et les communications stratégiques.
+                    Nous sommes des stratèges chevronnés qui possèdent une vaste expérience des marchés 
+                    boursiers, des sociétés ouvertes, des communications d’entreprise et des relations avec 
+                    les investisseurs.
+                 </p>
+                 <p>
+                    MBC compte des clients dans divers secteurs d’activité et à différents stades de développement
+                    : des entreprises qui envisagent un premier appel public à l’épargne jusqu’à des sociétés mondiales dont le 
+                    chiffre d’affaires dépasse 8 milliards de dollars. Avec des bureaux à Montréal et à Toronto, nous 
+                    communiquons avec des actionnaires du monde entier pour le compte de nos clients. 
+                    Notre équipe de professionnels expérimentés met au service des entreprises son savoir-faire éprouvé en 
+                    les aidant à naviguer dans le paysage complexe des investisseurs, à renforcer leur crédibilité et à optimiser la valeur actionnariale.
+                 </p>   
+             </div>
+         </div>
+     
+         <!-- Section 3 -->
+        <div class="section section-3">
+            <div class="title-div">
+                <h3>Pourquoi MBC ?</h3>
+            </div>
+            <div class="content">
+                <div class="subsect">
+                    <img src="assets/image_3.png">
+                    <p class="subtext">Les membres séniors de l’équipe sont toujours le principal point de contact pour nos clients</p>
+                </div>
+                <div class="subsect">
+                    <img src="assets/image_4.png">
+                    <p class="subtext">Une expertise approfondie des marchés des capitaux et une offre complète de services</p>
+                </div>
+                <div class="subsect">
+                    <img src="assets/image_5.png">
+                    <p class="subtext">Nous sommes des conseillers de confiance qui agissent comme un prolongement des équipes de nos clients</p>
+                </div>
+            </div>
+            <div class="contact-us-div">
+                <div class="contact-us-title">
+                    <h2>Rehaussez votre plan pour les marchés des capitaux!</h2>
+                </div>
+                <div style="height:50%">
+                    <button class="button">Contactez MBC</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page-2">
+        <!-- Section 1 -->
+        <div class="section p2-section-1">
+            <div class="p2-section-1-title">
+                <h2>Connecter les entreprises aux marchés de capitaux.</h2>
+                <h2>Créer de la valeur grâce à l’expertise.</h2>
+            </div>
+            <div class="p2-section-1-div">
+                <div class="section-2-img-div">
+                    <img src="assets/image_6.jpg" alt="Expertise Image">
+                </div>
+                <div class="p2-section-1-text">
+                    <p>
+                        Que vous cherchiez à améliorer vos communications avec les actionnaires et à gérer
+                        les attentes du marché, à accroître la liquidité, à obtenir la couverture d’analystes 
+                        ou encore à préparer une entrée en bourse ou à réaliser une acquisition transformatrice, 
+                        nous vous apportons un point de vue éclairé, les ressources et les contacts dont vous avez besoin pour réussir. 
+                    </p>
+                    <p>
+                        Notre expertise s’appuie sur des décennies d’expérience auprès d’entreprises de divers 
+                        secteurs d’activité et à différents stades de développement. Notre connaissance approfondie 
+                        des marchés financiers canadiens et mondiaux permet à MBC d’offrir une gamme complète de services 
+                        et de fournir des renseignements plus judicieux à tous les stades du cycle d’une entreprise privée ou d’une société ouverte.  
+                    </p>       
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="section p2-section-2">
+            <div style="display:flex; flex-direction: row; padding:0px 20px">
+                <div style="width:50%"></div>
+                <div style="width:50%">
+                    <h1 class="ipo-title">Entrées en bourse et fusions-acquisitions</h1>
+                    <p class="ipo-description">
+                        Les membres de notre équipe ont donné des conseils dans le cadre de 
+                        14 premiers appels publics à l’épargne pour des produits totaux de 2,2 milliards 
+                        de dollars, ainsi que dans le cadre d’opérations de fusions-acquisitions et d’émissions 
+                        secondaires pour un montant total de plus de 4,1 milliards de dollars.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section p2-section-3">
+            <div class="services-background">
+                <div style="width:60%"></div>
+                <div style="width:40%; display: flex; flex-direction: column;">
+                    <div class="services-content">
+                        <h1 class="services-title">Nos services comprennenent</h1>
+                        <ul class="services-list">
+                            <li>Élaboration de stratégies de relations avec les investisseurs</li>
+                            <li>Conseils continus sur les marchés des capitaux</li>
+                            <li>Élaboration de messages clés</li>
+                            <li>Élaboration de présentations à l’intention des investisseurs</li>
+                            <li>Ciblage des investisseurs</li>
+                            <li>Communication avec les analystes</li>
+                            <li>Rapports trimestriels</li>
+                            <li>Préparation de téléconférences de présentation des résultats </li>
+                            <li>Préparation de rapports pour les conseils d’administration</li>
+                            <li>Rédaction de communiqués de presse</li>
+                            <li>Traitement des demandes des investisseurs</li>
+                            <li>Soutien aux entrées en bourse</li>
+                            <li>Rédaction de prospectus</li>
+                            <li>Communications relatives aux transactions</li>
+                            <li>Préparation et coordination des tournées de présentations aux investisseurs</li>
+                            <li>Développement de sites Web pour les investisseurs</li>
+                            <li>Création de fiches d’information à l’intention des investisseurs</li>
+                            <li>Préparation d’assemblées annuelles des actionnaires</li>
+                            <li>Rapports ESG</li>
+                            <li>Dépôts réglementaires</li>
+                            <li>Études sur la perception des investisseurs</li>
+                            <li>Veille concurrentielle</li>
+                        </ul>
+                    </div>
+                    <div class="call-to-action">
+                        <h2>Découvrez comment nous pouvons vous aider à créer de la valeur durable sur les marchés des capitaux !</h2>
+                        <button class="button">Contactez MBC</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page-3">
+        <!-- Section 1 -->
+        <div class="section p3-section-1">
+            <div class="p3-section1-title">
+                <h2>Des professionnels chevronnés soutenus par </h2>
+                <h2>une équipe multidisciplinaire.</h2>
+            </div>
+            <div class="p3-section-1-div">
+                <div class="p3-section-1-img">
+                    <img src="assets/image_9.jpg" alt="Expertise Image">
+                </div>
+                <div class="p3-section-1-text">
+                    <p>
+                        Notre équipe dévouée aux marchés des capitaux est composée de professionnels qui ont notamment 
+                        œuvré comme analystes de maisons de courtage, banquiers, responsables des relations avec 
+                        les investisseurs et consultants au sein de grandes agences. Nos relations établies avec 
+                        les acteurs clés de la communauté des investisseurs procurent à nos clients un accès direct aux décideurs.
+                    </p>
+                    <p>
+                        Lorsque vous travaillez avec MBC, les membres séniors de notre équipe sont toujours votre principal 
+                        point de contact. Vous avez également accès à notre personnel de soutien multidisciplinaire qui 
+                        comprend des analystes, des concepteurs graphiques, des coordonnateurs d’événements et des traducteurs.  
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="section p3-section-2">
+            <div style="display:flex; flex-direction: column; width:100%; height: 100%;">
+                <div style="width:50%; height: 100%; display: flex; justify-content: center;">
+                    <p class="section-text">
+                        Avec des bureaux à Montréal et à Toronto, notre équipe est en contact avec des 
+                        actionnaires du monde entier pour le compte de nos clients.
+                    </p>
+                </div>
+                <div style="width:50%"></div>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section p3-section-3">
+            <h1 class="team-title">Our Senior Team</h1>
+            <div class="team-member">
+                <img src="assets/Pierre.png" alt="Pierre Boucher" class="team-photo">
+                <h3>Pierre Boucher, CPA, CMA</h3>
+                <p class="team-role">Président</p>
+                <button class="bio-toggle" data-target="#pierre-bio">Full Bio</button>
+                <div style="display:flex; justify-content: center;">
+                    <div class="bio-content" id="pierre-bio">
+                        <p>
+                            Président de MaisonBrison Communications depuis 2019, Pierre s’est joint 
+                            à la firme en 2009, et est devenu associé en 2016. Il est impliqué dans 
+                            les marchés financiers nord-américains depuis plus de 25 ans. Avant de se joindre 
+                            à MBC, il a travaillé pendant douze ans comme analyste financier couvrant les 
+                            situations spéciales et les sociétés technologiques pour des firmes de courtage 
+                            internationales, en plus d’avoir œuvré en banque d’investissement. Pendant 
+                            cette période, la qualité de son travail, de ses recherches et de ses recommandations 
+                            a été reconnue dans divers sondages réalisés auprès des investisseurs institutionnels. 
+                            Il travaille actuellement avec plusieurs clients qui ont une exposition mondiale et 
+                            des bases d’investisseurs très diversifiées. La méthodologie de Pierre repose 
+                            sur une analyse en profondeur des entreprises des clients afin de comprendre 
+                            leurs activités, les tendances de l’industrie et le contexte concurrentiel. 
+                            Depuis six ans, il est président du conseil d’administration de Québec Bourse. 
+                            Pierre est diplômé de l’Université du Québec à Montréal, où il a étudié la 
+                            comptabilité et la gestion. 
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <hr class="divider">
+                </div>
+            </div>
+        
+            <div class="team-member">
+                <img src="assets/Martin.png" alt="Martin Goulet" class="team-photo">
+                <h3>Martin Goulet, M.Sc., CFA</h3>
+                <p class="team-role">Associé, premier vice-président</p>
+                <button class="bio-toggle" data-target="#martin-bio" data-toggle="collapse-martin">Full Bio</button>
+                <div style="display:flex; justify-content: center;">
+                    <div class="bio-content" id="martin-bio">
+                        <p>
+                            Martin est un praticien chevronné dans les domaines de la recherche en 
+                            placement et de l’analyse financière. Il apporte des connaissances 
+                            spécialisées et une clarté constante aux communications financières 
+                            des clients de MaisonBrison. Au cours de sa carrière, Martin a étudié 
+                            le processus décisionnel des entreprises et le comportement des marchés. 
+                            Il a occupé pendant treize ans différents postes liés à la recherche et 
+                            l’analyse, dont neuf à titre d’analyste en situations spéciales à la 
+                            Financière Banque Nationale à Montréal. Comme analyste, il a su identifier 
+                            le potentiel de sociétés axées sur la croissance à des stades précoces de 
+                            leur développement, ce qui a permis à de nombreux investisseurs de réaliser 
+                            des rendements supérieurs à la moyenne. L’excellence de son travail a 
+                            été reconnue en 2006 lorsqu’il a remporté la deuxième place lors de la 
+                            remise des prix StarMine Analyst Awards dans la catégorie des sociétés 
+                            industrielles diversifiées. Martin a obtenu une M.Sc. en finance de 
+                            l’Université de Sherbrooke en 1993 et a reçu le titre d’analyste financier 
+                            agréé en 1996. 
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <hr class="divider">
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/Trevor.png" alt="Trevor Heisler" class="team-photo">
+                <h3>Trevor Heisler</h3>
+                <p class="team-role">Vice-président</p>
+                <button class="bio-toggle" data-target="#trevor-bio">Full Bio</button>
+                <div style="display:flex; justify-content: center;">
+                    <div class="bio-content" id="trevor-bio">
+                        <p>
+                            Trevor est un professionnel des relations avec les investisseurs qui 
+                            compte plus de 20 ans d’expérience dans les marchés des capitaux 
+                            internationaux et les services financiers. Il a été un conseiller 
+                            de confiance de plusieurs grandes entreprises nord-américaines et 
+                            a travaillé avec des clients de toutes tailles œuvrant dans une 
+                            grande variété de secteurs. Trevor sait très bien disséquer des 
+                            modèles d’affaires et des transactions complexes pour les expliquer 
+                            de façon claire et convaincante aux divers publics cibles. Il a 
+                            conseillé et dirigé les communications pour des premiers appels 
+                            publics à l’épargne et des opérations de prise de contrôle inversée, 
+                            des fusions et acquisitions, de même que pour des restructurations, 
+                            des cessions et des opérations de privatisation. Trevor possède une 
+                            vaste expérience en agence acquise au sein du cabinet de relations 
+                            publiques NATIONAL, a passé plusieurs années en tant que consultant 
+                            indépendant, a dirigé une société de conseil qui aidait les entreprises 
+                            basées en Chine à accéder aux marchés des capitaux nord-américains, et 
+                            a été un membre senior du groupe des industries diversifiées chez Equicom 
+                            du Groupe TMX. Plus tôt dans sa carrière, Trevor a travaillé dans le domaine 
+                            des prêts commerciaux au sein de l’une des plus grandes banques canadiennes.
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <hr class="divider">
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/Vance.png" alt="Vance Oliver" class="team-photo">
+                <h3>Vance Oliver</h3>
+                <p class="team-role">Vice-président</p>
+                <button class="bio-toggle" data-target="#vance-bio">Full Bio</button>
+                <div style="display:flex; justify-content: center;">
+                    <div class="bio-content" id="vance-bio">
+                        <p>
+                            Vance s’est joint à MaisonBrison en 2021. Il est un cadre talentueux 
+                            qui possède une vaste expérience des relations avec les investisseurs 
+                            (« RI »). Vance a passé plus de deux décennies à mettre en œuvre des 
+                            plans de RI dotés d’objectifs mesurables, ainsi qu’à conseiller des 
+                            équipes de direction sur des enjeux stratégiques en matière de RI. 
+                            Il a également géré les communications de sociétés cotées en bourse 
+                            avec les analystes financiers et les investisseurs institutionnels, 
+                            s’efforçant de faire en sorte qu’elles soient valorisées de manière 
+                            équitable par le marché. Vance est un leader axé sur les résultats et 
+                            un penseur stratégique qui possède une expérience pratique des introductions 
+                            en bourse, des émissions secondaires d’actions et des offres d’achat 
+                            hostiles. Il a été membre du conseil d’administration de la Canadian 
+                            Investor Relations Institute (CIRI), section du Québec, et a complété 
+                            avec succès le cours sur les valeurs mobilières de l’institut canadien 
+                            des valeurs mobilières (ICVM). Vance a travaillé auparavant en journalisme, 
+                            à la fois comme rédacteur et reporter, et a obtenu un baccalauréat en 
+                            journalisme avec distinction de l’Université Carleton d’Ottawa.
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <hr class="divider">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MBC. All Rights Reserved.</p>
+        <a href="https://www.linkedin.com/company/maisonbrison">LinkedIn</a>
+    </footer>
+</body>
+</html>
