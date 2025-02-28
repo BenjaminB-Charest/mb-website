@@ -10,7 +10,7 @@
     <title>MBC Website</title>
     <style>
         :root {
-            font-size: 16px;
+            font-size: 1vw;
         }
         @font-face {
             font-family: 'Acumin Pro Bold';
@@ -35,6 +35,7 @@
             background-color: #ffffff;
             border-bottom: 2px solid #f1f4fb;
             height: 25vh;
+            min-height: 10vh;
             width:100%;
         }
 
@@ -171,7 +172,6 @@
         
         .section-2 p {
             font-size: 1.25rem;
-            line-height: 30px;
             margin-bottom: 2vh;
             padding: 0 0;
             text-align: left;
@@ -187,6 +187,7 @@
             max-width: 100%;
             height: auto;
             padding-left: 4vw;
+            object-fit: cover;
         }
 
         .section-2-text-div{
@@ -334,7 +335,6 @@
         
         .p2-section-1 p {
             font-size: 1.25rem;
-            line-height: 30px;
             margin-bottom: 2%;
             text-align:justify;
             text-justify: inter-word;
@@ -389,7 +389,6 @@
         .ipo-description {
             font-family: 'Acumin Pro', sans-serif;
             font-size: 1.5rem;
-            line-height: 38px;
             color: #32e3f7; 
         }
 
@@ -408,10 +407,9 @@
         .services-background {
             background-image: url('assets/image_8.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: top center;
             background-repeat: no-repeat;
             width: 100%;
-            min-height: 1200px;
             display: flex;
             flex-direction: row;
             padding-bottom: 7%;
@@ -430,7 +428,7 @@
 
         .services-content {
             padding: 2vh;
-            max-width: 600px;
+            width:100%;
             border-radius: 5px;
         }
 
@@ -447,7 +445,7 @@
             margin: 0;
             font-family: 'Acumin Pro Bold', sans-serif;
             font-size: 1.25rem;
-            line-height: 46px;
+            line-height: 1.7rem;
             color: #003853;
         }
 
@@ -464,7 +462,7 @@
             position: absolute;
             font-size: 2rem;
             left: 0;
-            line-height: 46px;
+            line-height: 1.7rem;
         }
 
         .call-to-action {
@@ -520,7 +518,7 @@
         
         .p3-section-1 p {
             font-size: 1.25rem;
-            line-height: 30px;
+            line-height: 1.7rem;
             margin-bottom: 2vh;
             text-align:justify;
             text-justify: inter-word;
@@ -561,12 +559,11 @@
         .section-text {
             font-family: 'Acumin Pro Bold', sans-serif;
             font-size: 1.6rem;
-            line-height: 38px;
+            line-height: 2rem;
             color: #ffffff;
             margin: 0;
             height: 100%;
             width:100%;
-            max-width: 500px;
             text-align: center;
             justify-content: center;
             align-content: center;
@@ -597,8 +594,8 @@
         }
 
         .team-photo {
-            width: 100px;
-            height: 100px;
+            width: 10vw;
+            height: 10vw;
             border-radius: 50%;
             margin-bottom: 1vh;
         }
@@ -620,7 +617,7 @@
         .bio-toggle {
             background-color: #f1f4fb;
             color: #202529;
-            padding: 8px 20px;
+            padding: 1vh 1.5vw;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
@@ -654,11 +651,11 @@
         .bio-content {
             display: none;
             padding: 1.5vh;
-            border-radius: 5px;
+            border-radius: 1vw;
             font-family: 'Acumin Pro', sans-serif;
             font-size: 1.25rem;
             color: #202529;
-            margin-top: 10px;
+            margin-top: 2vh;
             text-align: left;
             width:75%
         }
@@ -700,6 +697,38 @@
             height: 2px;
             width: 25px;
             background-color: black;
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.5vw;
+        }
+
+        .lang-option {
+            height: 2vw;
+            width: 2vw;
+            font-size: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .lang-option.active {
+            background-color: #eddbc3;
+        }
+
+        .lang-option.inactive {
+            background-color: white;
+        }
+
+        .lang-option:hover {
+            background-color: #f0e0c0;
         }
 
         @media (max-width: 600px) {
@@ -1030,8 +1059,8 @@
             <li><a href="#">Our Team</a></li>
         </ul> 
         <div class="lang-switch">
-                <span style="background-color: #eddbc3; font-family: Acumin Pro Bold; height: 25px; width: 30px; text-align: center;">EN</span>
-                <a href="fr.html"><span>FR</span></a>
+                <span class="lang-option active">EN</span>
+                <a href="fr.html"><span class="lang-option inactive">FR</span></a>
         </div>
     </nav>
 
