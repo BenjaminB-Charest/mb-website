@@ -677,6 +677,9 @@
             background-color: #3f5c6c;
             color: white;
             text-align: center;
+            align-items: start;
+            display: flex;
+            flex-direction:column;
         }
 
         footer a {
@@ -733,6 +736,27 @@
 
         .lang-option:hover {
             background-color: #f0e0c0;
+        }
+
+        .linkedin-icon {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .linkedin-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-div{
+            display:flex;
+            flex-direction:row;
+            padding-bottom: 2vh;
+        }
+
+        .icon-div p{
+            margin-left: 2vw
         }
 
         @media (max-width: 600px) {
@@ -1478,8 +1502,15 @@
     
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 MBC. All Rights Reserved.</p>
-        <a href="https://www.linkedin.com/company/maisonbrison">LinkedIn</a>
+        <div class="icon-div">
+            <a href="https://www.linkedin.com/company/maisonbrison" target="_blank">
+                <img src="assets/linkedin_icon.svg" alt="LinkedIn" class="linkedin-icon">
+            </a>
+            <p>Contact</p>
+            <p>Terms of use</p>
+        </div>
+        <p>Copyright &copy; 2025 MaisonBrison Communications</p>
+        <p>All Rights Reserved.</p>
     </footer>
 </body>
 </html>
