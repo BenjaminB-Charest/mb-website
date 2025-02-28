@@ -10,7 +10,7 @@
     <title>MBC Website</title>
     <style>
         :root {
-            font-size: 14px;
+            font-size: 0.9vw;
         }
         @font-face {
             font-family: 'Acumin Pro Bold';
@@ -27,6 +27,7 @@
         }
 
         nav {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,6 +35,7 @@
             background-color: #ffffff;
             border-bottom: 2px solid #f1f4fb;
             height: 25vh;
+            min-height: 10vh;
             width:100%;
         }
 
@@ -139,14 +141,14 @@
         }
 
         .section-1 h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-top: 10vh;
             text-transform: uppercase;
             color: #003853;
         }
 
         .section-1 h3 {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             text-transform: uppercase;
             margin-top: -2vh;
             color: #003853;
@@ -159,11 +161,10 @@
             flex-direction: row;
             height: 95vh;
             padding-top: 10vh;
-            padding-bottom: 12vh;
         }
 
         .section-2 h2 {
-            font-size: 1.75rem;
+            font-size: 2.25rem;
             margin-bottom: 2vh;
             text-align: left;
             color: #ea7900;
@@ -171,7 +172,6 @@
         
         .section-2 p {
             font-size: 1.25rem;
-            line-height: 30px;
             margin-bottom: 2vh;
             padding: 0 0;
             text-align: left;
@@ -184,16 +184,22 @@
         }
         
         .section-2 img {
-            max-width: 100%;
+            width:100%;
             height: auto;
             padding-left: 4vw;
+            object-fit: cover;
         }
 
         .section-2-text-div{
             width:55%;
             height:100%;
             padding-left: 5%;
-            padding-right:15px
+            padding-right: 5%
+        }
+
+        .section-2-text-div p{
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         .h2-style{
@@ -247,14 +253,14 @@
         .subtext{
             font-family: 'Acumin Pro Bold', sans-serif;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 1.15rem;
             color:#003853;
             width: 90%;
             padding-top: 2vh;
         }
 
         .section-3 img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
         }
 
@@ -317,7 +323,8 @@
         }
 
         .p2-section-1-title{
-            height:30%
+            height:30%;
+            padding-bottom:3vh
         }
 
         .p2-section-1-text{
@@ -329,15 +336,15 @@
         
         .p2-section-1 p {
             font-size: 1.25rem;
-            line-height: 30px;
             margin-bottom: 2%;
-            text-align: left;
+            text-align:justify;
+            text-justify: inter-word;
             font-family: 'Acumin Pro', sans-serif;
             padding-right: 5%;
         }
         
         .p2-section-1 img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             padding-left: 4vw;
         }
@@ -345,7 +352,7 @@
         .p2-section-1 h2{
             color: #003853;
             font-family: 'Acumin Pro Bold', sans-serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: bold;
         }
 
@@ -364,9 +371,17 @@
             padding: 0 2vh;
         }
 
+        .p2-section-2-right{
+            width:50%;
+        }
+
+        .p2-section-2-left{
+            width:50%;
+        }
+
         .ipo-title {
             font-family: 'Acumin Pro Bold', sans-serif;
-            font-size: 2.0rem;
+            font-size: 2.5rem;
             color: #f41361;
             margin: 0 0 1vh 0;
             text-transform: uppercase;
@@ -375,7 +390,6 @@
         .ipo-description {
             font-family: 'Acumin Pro', sans-serif;
             font-size: 1.5rem;
-            line-height: 38px;
             color: #32e3f7; 
         }
 
@@ -394,19 +408,28 @@
         .services-background {
             background-image: url('assets/image_8.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: top center;
             background-repeat: no-repeat;
             width: 100%;
-            min-height: 1200px;
             display: flex;
             flex-direction: row;
             padding-bottom: 7%;
             padding-top:5%;
         }
 
+        .services-left-side{
+            width:60%
+        }
+
+        .services-right-side{
+            width:40%; 
+            display: flex; 
+            flex-direction: column;
+        }
+
         .services-content {
             padding: 2vh;
-            max-width: 600px;
+            width:100%;
             border-radius: 5px;
         }
 
@@ -423,7 +446,7 @@
             margin: 0;
             font-family: 'Acumin Pro Bold', sans-serif;
             font-size: 1.25rem;
-            line-height: 46px;
+            line-height: 1.7rem;
             color: #003853;
         }
 
@@ -440,7 +463,7 @@
             position: absolute;
             font-size: 2rem;
             left: 0;
-            line-height: 46px;
+            line-height: 1.7rem;
         }
 
         .call-to-action {
@@ -468,19 +491,20 @@
             background-color: #f1f4fb;
             color: #202529;
             height: 105vh;
-            padding-top: 5%;
-            padding-bottom: 7%; 
+            padding-top: 10vh;
+            padding-bottom:12vh; 
         }
 
         .p3-section-1-div{
             display:flex; 
-            flex-direction: row;
-            padding-top:3%;
+            flex-direction: row; 
             height:70%
         }
 
         .p3-section-1-title{
-            height:30%
+            height:30%;
+            font-size:3rem;
+            width:90%
         }
 
         .p3-section-1-img{
@@ -497,15 +521,16 @@
         
         .p3-section-1 p {
             font-size: 1.25rem;
-            line-height: 30px;
+            line-height: 2rem;
             margin-bottom: 2vh;
-            text-align: left;
+            text-align:justify;
+            text-justify: inter-word;
             font-family: 'Acumin Pro', sans-serif;
             padding-right: 5%;
         }
         
         .p3-section-1 img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             padding-left: 3vw;
         }
@@ -513,7 +538,7 @@
         .p3-section-1 h2{
             color: #003853;
             font-family: 'Acumin Pro Bold', sans-serif;
-            font-size:2.5rem;
+            font-size:3rem;
             font-weight: bold;
         }
 
@@ -537,12 +562,11 @@
         .section-text {
             font-family: 'Acumin Pro Bold', sans-serif;
             font-size: 1.6rem;
-            line-height: 38px;
+            line-height: 2rem;
             color: #ffffff;
             margin: 0;
             height: 100%;
             width:100%;
-            max-width: 500px;
             text-align: center;
             justify-content: center;
             align-content: center;
@@ -573,8 +597,8 @@
         }
 
         .team-photo {
-            width: 100px;
-            height: 100px;
+            width: 10vw;
+            height: 10vw;
             border-radius: 50%;
             margin-bottom: 1vh;
         }
@@ -596,7 +620,7 @@
         .bio-toggle {
             background-color: #f1f4fb;
             color: #202529;
-            padding: 8px 20px;
+            padding: 1vh 1.5vw;
             text-transform: uppercase;
             border: none;
             cursor: pointer;
@@ -622,7 +646,7 @@
         .divider {
             border: none;
             border-top: 2px solid #d6d8db;
-            margin: 0.5vw 0;
+            margin: 5vh 0 2vh 0;
             width:75%;
             transition: margin-top 0.3s ease;
         }
@@ -630,11 +654,11 @@
         .bio-content {
             display: none;
             padding: 1.5vh;
-            border-radius: 5px;
+            border-radius: 1vw;
             font-family: 'Acumin Pro', sans-serif;
             font-size: 1.25rem;
             color: #202529;
-            margin-top: 10px;
+            margin-top: 2vh;
             text-align: left;
             width:75%
         }
@@ -678,9 +702,40 @@
             background-color: black;
         }
 
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.5vw;
+        }
+
+        .lang-option {
+            height: 2vw;
+            width: 2vw;
+            font-size: 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Acumin Pro Bold', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .lang-option.active {
+            background-color: #eddbc3;
+        }
+
+        .lang-option.inactive {
+            background-color: white;
+        }
+
+        .lang-option:hover {
+            background-color: #f0e0c0;
+        }
+
         @media (max-width: 600px) {
             :root{
-                font-size:11px
+                font-size:12px
             }
 
             nav .logo {
@@ -696,11 +751,44 @@
             }
 
             .nav-links.active {
-                display: flex;
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #ffffff;
+                z-index: 1000;
+                padding: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                width: 100%;
             }
 
             .hamburger-menu {
                 display: flex
+            }
+            
+            nav ul li {
+                width: 100%;
+                padding: 10px 0;
+                text-align: center;
+                margin: 0;
+            }
+
+            .hamburger-menu.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger-menu.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            
+            .hamburger-menu span {
+                transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
             .nav .lang-switch {
@@ -711,15 +799,32 @@
             .section-2{
                 flex-direction: column;
                 height: auto;
+                padding-bottom: 3vh;
             }
+
+            .section-2 h2{
+                font-size:3rem;
+            }
+
             .section-2-img-div{   
                 width:90%; 
                 height: 100%;
             }
+
+            .section-2-img-div img{
+                padding:0;
+            }
+
             .section-2-text-div{
                 width:90%;
-                padding:4vh;
+                padding:4vh 0;
             }
+
+            .section-2-text-div p{
+                text-align: justify;
+                text-justify: inter-word; 
+            }
+
             .h2-style{
                 flex-direction: column;
             }
@@ -738,7 +843,7 @@
 
             .section-3 .subtext{
                 padding-top:3vh;
-                font-size:1.5rem;
+                font-size:1.75rem;
             }
 
             .section-3 .contact-us-div{
@@ -748,6 +853,12 @@
             .button{
                 width: 50vw;
                 height: 7.5vh;
+                font-size:1.5rem;
+                margin: 3vh 0;
+            }
+
+            .contact-us-title h2{
+                font-size: 2.3rem;
             }
 
             /* Page 2 */
@@ -761,46 +872,148 @@
 
             .p2-section-1-div{
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .p2-section-1-title{
                 height: 20%;
             }
 
+            .p2-section-1-title h2{
+                font-size:2.5rem;
+            }
+
             .p2-section-1-text{
                 width: 90%;
-                padding-top: 3vh;
+                padding: 2vh;
             }
 
-            .p2-section-1-text p2{
-                text-align: justify;
-                text-justify: inter-word; 
-            }
-
-            .ipo-title{
-                font-size: 1.75rem;
-            }
-
-            .ipo-description {
-                font-size: 1.25rem;
-            }
-            /* Page 3 */
-            .p3-section-1{
+            .p2-section-1 img{
+                padding: 3vh 0;
+                width: 90%;
                 height: auto;
             }
 
+            .p2-section-1-text p{
+                font-size: 1.25rem;
+                line-height: 2rem;
+                margin-bottom: 2vh;
+                text-align:justify;
+                text-justify: inter-word;
+                font-family: 'Acumin Pro', sans-serif;
+                padding-right: 5%;
+            }
+
+            .p2-section-2-left{
+                display: none;
+            }
+
+            .p2-section-2-right{
+                width:100%
+            }
+
+            .p2-section-2 {
+                background-image: none;
+                height: auto;
+                padding: 5vh 0vh;
+                background-color: #031e4d;
+            }
+
+            .p2-section-2::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: auto;
+                background: url('assets/image_7.jpg') no-repeat center;
+                background-size: contain;
+                background-size: 175%;
+                background-position: 25% center;
+                min-height: 45vh;
+            }
+
+            .services-background {
+                background-image: none;
+                background-color: #abcfff;
+            }
+
+            .services-right-side{
+                width:100%
+            }
+
+            .services-left-side{
+                display:none;
+                width:0%
+            }
+
+            .ipo-title{
+                text-align: start;
+                font-size: 3rem;
+            }
+
+            .ipo-description{
+                text-align:justify;
+            }
+
+            .services-title{
+                font-size: 3.5rem;
+            }
+
+            .services-content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .services-list li {
+                font-size: 1.3rem;
+                padding-left: 2.5vw;
+            }
+
+            .services-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+            }
+
+            .call-to-action{
+                display: flex;
+                padding: 2vh;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .call-to-action h2{
+                text-align: center;
+                font-size:2.5rem;
+            }
+
+            /* Page 3 */
+            
+            .p3-section-1{
+                height: auto;
+                padding: 3vh 0;
+            }
+
             .p3-section-1-title{
-                height: 20%;
-                font-size: 2rem;
+                font-size: 2.5rem;
+                padding:3vw;
             }
 
             .p3-section-1-div{
                 flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .p3-section-1-img{
-                width:100%;
-                padding: 2.5vh; 
+                width:90%;
+            }
+
+            .p3-section-1-img img{
+                padding: 0;
             }
 
             .p3-section-1-text{
@@ -808,9 +1021,10 @@
                 padding: 5vh;
             }
 
-            .p3-section-1-text p2{
+            .p3-section-1-text p{
                 text-align: justify;
                 text-justify: inter-word; 
+                padding: 0 1vw;
             }
             
             .bio-content{
@@ -818,9 +1032,18 @@
                 padding: 2vh 4vw;
             }
 
-            .bio-content p2{
+            .bio-content p{
                 text-align: justify;
                 text-justify: inter-word; 
+            }
+
+            .section-text{
+                text-align: justify;
+                text-justify: inter-word; 
+            }
+
+            .divider{
+                margin: 4vh 0;
             }
 
         }
@@ -843,44 +1066,10 @@
             <li><a href="#">Notre équipe</a></li>
         </ul> 
         <div class="lang-switch">
-                <a href="index.html"><span>EN</span></a>
-                <span style="background-color: #eddbc3; font-family: Acumin Pro Bold; height: 20px; width: 30px; text-align: center;">FR</span>
+            <a href="index.html"> <span class="lang-option inactive">EN</span></a>
+            <span class="lang-option active">FR</span>
         </div>
     </nav>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const navLinks = document.querySelectorAll("nav ul li a");
-            const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
-    
-            if (navLinks.length > 0) {
-                navLinks[0].classList.add("selected");
-            }
-    
-            function showPage(index) {
-                pages.forEach((page, i) => {
-                    if (i === index) {
-                        page.style.display = "block";
-                    } else {
-                        page.style.display = "none";
-                    }
-                });
-            }
-    
-            navLinks.forEach((link, index) => {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault();
-    
-                    navLinks.forEach(nav => nav.classList.remove("selected"));
-                    this.classList.add("selected");
-    
-                    showPage(index);
-                });
-            });
-    
-            showPage(0);
-        });
-    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -923,10 +1112,8 @@
                     const bioContent = document.querySelector(targetId);
                     const divider = document.querySelector(`#divider-${targetId.split('-')[1]}`);
 
-                    // Toggle the 'active' class to show or hide the bio content
                     bioContent.classList.toggle("active");
 
-                    // Adjust divider margin
                     if (bioContent.classList.contains("active")) {
                         divider.style.marginTop = "15px";
                     } else {
@@ -944,15 +1131,25 @@
 
             hamburgerMenu.addEventListener("click", function () {
                 navLinks.classList.toggle("active");
+                this.classList.toggle("active");
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove("active");
+                    hamburgerMenu.classList.remove("active");
+                });
             });
         });
     </script>
 
+    
+
     <div class="page-1">
          <!-- Section 1 -->
          <div class="section section-1 text-center">
-                 <h1>Des partenaires de confiance </h1>
-                 <h3>sur les marchés des capitaux </h3>
+                 <h1>Des partenaires de confiance</h1>
+                 <h3>sur les marchés des capitaux</h3>
          </div>
      
          <!-- Section 2 -->
@@ -980,7 +1177,7 @@
                     communiquons avec des actionnaires du monde entier pour le compte de nos clients. 
                     Notre équipe de professionnels expérimentés met au service des entreprises son savoir-faire éprouvé en 
                     les aidant à naviguer dans le paysage complexe des investisseurs, à renforcer leur crédibilité et à optimiser la valeur actionnariale.
-                 </p>   
+                </p>   
              </div>
          </div>
      
@@ -1007,7 +1204,7 @@
                 <div class="contact-us-title">
                     <h2>Rehaussez votre plan pour les marchés des capitaux!</h2>
                 </div>
-                <div style="height:50%">
+                <div style="height:50%; margin-top:3vh">
                     <button class="button">Contactez MBC</button>
                 </div>
             </div>
@@ -1038,16 +1235,17 @@
                         secteurs d’activité et à différents stades de développement. Notre connaissance approfondie 
                         des marchés financiers canadiens et mondiaux permet à MBC d’offrir une gamme complète de services 
                         et de fournir des renseignements plus judicieux à tous les stades du cycle d’une entreprise privée ou d’une société ouverte.  
-                    </p>       
+                    </p>
+                        
                 </div>
             </div>
         </div>
         
         <!-- Section 2 -->
         <div class="section p2-section-2">
-            <div style="display:flex; flex-direction: row; padding:0px 20px">
-                <div style="width:50%"></div>
-                <div style="width:50%">
+            <div style="display:flex; flex-direction: row; padding:0px 20px; width:100%">
+                <div class="p2-section-2-left"></div>
+                <div class="p2-section-2-right">
                     <h1 class="ipo-title">Entrées en bourse et fusions-acquisitions</h1>
                     <p class="ipo-description">
                         Les membres de notre équipe ont donné des conseils dans le cadre de 
@@ -1062,10 +1260,10 @@
         <!-- Section 3 -->
         <div class="section p2-section-3">
             <div class="services-background">
-                <div style="width:60%"></div>
-                <div style="width:40%; display: flex; flex-direction: column;">
+                <div class="services-left-side"></div>
+                <div class="services-right-side">
                     <div class="services-content">
-                        <h1 class="services-title">Nos services comprennenent</h1>
+                        <h1 class="services-title">Nos Services</h1>
                         <ul class="services-list">
                             <li>Élaboration de stratégies de relations avec les investisseurs</li>
                             <li>Conseils continus sur les marchés des capitaux</li>
@@ -1104,9 +1302,8 @@
     <div class="page-3">
         <!-- Section 1 -->
         <div class="section p3-section-1">
-            <div class="p3-section1-title">
-                <h2>Des professionnels chevronnés soutenus par </h2>
-                <h2>une équipe multidisciplinaire.</h2>
+            <div class="p3-section-1-title">
+                <h2>Des professionnels chevronnés soutenus par une équipe multidisciplinaire.</h2>
             </div>
             <div class="p3-section-1-div">
                 <div class="p3-section-1-img">
@@ -1143,12 +1340,12 @@
 
         <!-- Section 3 -->
         <div class="section p3-section-3">
-            <h1 class="team-title">Our Senior Team</h1>
+            <h1 class="team-title">Notre Équipe Senior</h1>
             <div class="team-member">
                 <img src="assets/Pierre.png" alt="Pierre Boucher" class="team-photo">
                 <h3>Pierre Boucher, CPA, CMA</h3>
                 <p class="team-role">Président</p>
-                <button class="bio-toggle" data-target="#pierre-bio">Full Bio</button>
+                <button class="bio-toggle" data-target="#pierre-bio">Biographie</button>
                 <div style="display:flex; justify-content: center;">
                     <div class="bio-content" id="pierre-bio">
                         <p>
@@ -1179,7 +1376,7 @@
                 <img src="assets/Martin.png" alt="Martin Goulet" class="team-photo">
                 <h3>Martin Goulet, M.Sc., CFA</h3>
                 <p class="team-role">Associé, premier vice-président</p>
-                <button class="bio-toggle" data-target="#martin-bio" data-toggle="collapse-martin">Full Bio</button>
+                <button class="bio-toggle" data-target="#martin-bio" data-toggle="collapse-martin">Biographie</button>
                 <div style="display:flex; justify-content: center;">
                     <div class="bio-content" id="martin-bio">
                         <p>
@@ -1198,7 +1395,7 @@
                             remise des prix StarMine Analyst Awards dans la catégorie des sociétés 
                             industrielles diversifiées. Martin a obtenu une M.Sc. en finance de 
                             l’Université de Sherbrooke en 1993 et a reçu le titre d’analyste financier 
-                            agréé en 1996. 
+                            agréé en 1996.                        
                         </p>
                     </div>
                 </div>
@@ -1210,8 +1407,8 @@
             <div class="team-member">
                 <img src="assets/Trevor.png" alt="Trevor Heisler" class="team-photo">
                 <h3>Trevor Heisler</h3>
-                <p class="team-role">Vice-président</p>
-                <button class="bio-toggle" data-target="#trevor-bio">Full Bio</button>
+                <p class="team-role">Vice-Président</p>
+                <button class="bio-toggle" data-target="#trevor-bio">Biographie</button>
                 <div style="display:flex; justify-content: center;">
                     <div class="bio-content" id="trevor-bio">
                         <p>
@@ -1245,8 +1442,8 @@
             <div class="team-member">
                 <img src="assets/Vance.png" alt="Vance Oliver" class="team-photo">
                 <h3>Vance Oliver</h3>
-                <p class="team-role">Vice-président</p>
-                <button class="bio-toggle" data-target="#vance-bio">Full Bio</button>
+                <p class="team-role">Vice-Président</p>
+                <button class="bio-toggle" data-target="#vance-bio">Biographie</button>
                 <div style="display:flex; justify-content: center;">
                     <div class="bio-content" id="vance-bio">
                         <p>
