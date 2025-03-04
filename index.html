@@ -741,8 +741,9 @@
         }
 
         .linkedin-icon {
-            width: 30px;
-            height: 30px;
+            width: 5vw;
+            height: auto;
+            max-width: 30px;
             display: inline-block;
             transition: transform 0.3s ease;
         }
@@ -763,7 +764,7 @@
 
         @media (max-width: 600px) {
             :root{
-                font-size:12px
+                font-size:3vw
             }
 
             nav .logo {
@@ -776,6 +777,15 @@
 
             nav ul {
                 display: none;
+            }
+
+            .lang-switch {
+                gap: 4vw;
+            }
+
+            .lang-option {
+                width: 5vw;
+                height: 5vw;
             }
 
             .nav-links.active {
@@ -824,6 +834,14 @@
             }
 
             /* Page 1 */
+            .section-1 h1 {
+                font-size: 3rem;
+            }
+
+            .section-1 h3 {
+                font-size: 2rem;
+            }
+
             .section-2{
                 flex-direction: column;
                 height: auto;
@@ -849,6 +867,7 @@
             }
 
             .section-2-text-div p{
+                font-size: 1.2rem;
                 text-align: justify;
                 text-justify: inter-word; 
             }
@@ -895,7 +914,7 @@
             } 
 
             .p2-section-1 h2{
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
 
             .p2-section-1-div{
@@ -930,7 +949,7 @@
                 text-align:justify;
                 text-justify: inter-word;
                 font-family: 'Acumin Pro', sans-serif;
-                padding-right: 5%;
+                padding-right: 0;
             }
 
             .p2-section-2-left{
@@ -956,7 +975,7 @@
                 background: url('assets/image_7.jpg') no-repeat center;
                 background-size: contain;
                 background-size: 175%;
-                background-position: 25% center;
+                background-position: 10% center;
                 min-height: 45vh;
             }
 
@@ -1015,7 +1034,7 @@
 
             .call-to-action h2{
                 text-align: center;
-                font-size:2.5rem;
+                font-size:2rem;
             }
 
             /* Page 3 */
@@ -1025,8 +1044,8 @@
                 padding: 3vh 0;
             }
 
-            .p3-section-1-title{
-                font-size: 2.5rem;
+            .p3-section-1-title h2{
+                font-size: 2rem;
                 padding:3vw;
             }
 
@@ -1054,6 +1073,12 @@
                 text-justify: inter-word; 
                 padding: 0 1vw;
             }
+
+            .p3-section-2{
+                background-size: contain;
+                background-size: 150%;
+                background-position: 75% center;
+            }
             
             .bio-content{
                 width: 100%;
@@ -1065,9 +1090,14 @@
                 text-justify: inter-word; 
             }
 
+            .team-photo {
+                width: 20vw;
+                height: 20vw;
+            }
+
             .section-text{
-                text-align: justify;
-                text-justify: inter-word; 
+                text-align: left;
+                text-justify: auto; 
             }
 
             .divider{
@@ -1466,6 +1496,7 @@
                 </div>
             </div>
         </div>
+        
     </div>
     
     <!-- Footer -->

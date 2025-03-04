@@ -739,8 +739,9 @@
         }
 
         .linkedin-icon {
-            width: 30px;
-            height: 30px;
+            width: 5vw;
+            height: auto;
+            max-width: 30px;
             display: inline-block;
             transition: transform 0.3s ease;
         }
@@ -761,7 +762,7 @@
 
         @media (max-width: 600px) {
             :root{
-                font-size:12px
+                font-size:2.6vw
             }
 
             nav .logo {
@@ -774,6 +775,15 @@
 
             nav ul {
                 display: none;
+            }
+            
+            .lang-switch {
+                gap: 4vw;
+            }
+
+            .lang-option {
+                width: 5vw;
+                height: 5vw;
             }
 
             .nav-links.active {
@@ -817,11 +827,26 @@
                 transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
-            .nav .lang-switch {
-                display: none;
+            .lang-switch {
+                gap: 4vw;
+            }
+
+            .lang-option {
+                width: 5vw;
+                height: 5vw;
             }
 
             /* Page 1 */
+            .section-1 h1 {
+                font-size: 3rem;
+                line-height: 1;
+            }
+
+            .section-1 h3 {
+                padding-top:2vh;
+                font-size: 2rem;
+            }
+
             .section-2{
                 flex-direction: column;
                 height: auto;
@@ -829,7 +854,7 @@
             }
 
             .section-2 h2{
-                font-size:3rem;
+                font-size:2.2rem;
             }
 
             .section-2-img-div{   
@@ -847,6 +872,7 @@
             }
 
             .section-2-text-div p{
+                font-size: 1.2rem;
                 text-align: justify;
                 text-justify: inter-word; 
             }
@@ -907,7 +933,8 @@
             }
 
             .p2-section-1-title h2{
-                font-size:2.5rem;
+                font-size:2rem;
+                line-height: 1;
             }
 
             .p2-section-1-text{
@@ -974,7 +1001,7 @@
 
             .ipo-title{
                 text-align: start;
-                font-size: 3rem;
+                font-size: 2.7rem;
             }
 
             .ipo-description{
@@ -1013,7 +1040,7 @@
 
             .call-to-action h2{
                 text-align: center;
-                font-size:2.5rem;
+                font-size:2rem;
             }
 
             /* Page 3 */
@@ -1025,7 +1052,11 @@
 
             .p3-section-1-title{
                 font-size: 2.5rem;
-                padding:3vw;
+                padding:3vw 0;
+            }
+
+            .p3-section-1-title h2{
+                font-size: 2rem;
             }
 
             .p3-section-1-div{
@@ -1049,7 +1080,8 @@
 
             .p3-section-1-text p{
                 text-align: justify;
-                text-justify: inter-word; 
+                text-justify: inter-word;
+                font-size:1.2rem;
                 padding: 0 1vw;
             }
             
@@ -1063,9 +1095,20 @@
                 text-justify: inter-word; 
             }
 
+            .p3-section-2{
+                background-size: contain;
+                background-size: 150%;
+                background-position: 75% center;
+            }
+
             .section-text{
-                text-align: justify;
-                text-justify: inter-word; 
+                text-align: left;
+                text-justify: auto; 
+            }
+
+            .team-photo {
+                width: 20vw;
+                height: 20vw;
             }
 
             .divider{
