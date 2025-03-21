@@ -31,10 +31,10 @@
             display: flex;
             justify-content: space-between;
             align-items: end;
-            padding: 2.5vh 5vw;
+            padding: 0 2.5vh 5vw 5vw;
             background-color: #ffffff;
             border-bottom: 2px solid #f1f4fb;
-            height: 25vh;
+            height: 20vh;
             min-height: 10vh;
             width:100%;
             padding-bottom:3vh;
@@ -42,6 +42,7 @@
 
         nav .logo {
             width: 20%;
+            padding-bottom: 1vh;
         }
 
         nav ul {
@@ -129,7 +130,7 @@
 
         .section-1 {
             background-image: url('assets/image_1.jpg');
-            background-size: cover;
+            background-size: 115%;
             background-position: center;
             background-repeat: no-repeat;
             color: #ffffff;
@@ -506,7 +507,7 @@
         .p3-section-1-title{
             height:30%;
             font-size:3rem;
-            width:90%
+            width:80%
         }
 
         .p3-section-1-img{
@@ -564,15 +565,23 @@
 
         .section-text {
             font-family: 'Acumin Pro Bold', sans-serif;
-            font-size: 1.6rem;
+            font-size: 2rem;
             line-height: 2rem;
             color: #ffffff;
             margin: 0;
             height: 100%;
             width:100%;
+            padding-left:2vw;
             text-align: center;
             justify-content: center;
             align-content: center;
+        }
+
+        .text-div-container{
+            width:50%; 
+            height: 100%; 
+            display: flex; 
+            justify-content: center;
         }
 
         /* Section 3 */
@@ -677,7 +686,7 @@
             padding: 5vh;
             background-color: #3f5c6c;
             color: white;
-            text-align: center;
+            text-align: start;
             align-items: start;
             display: flex;
             flex-direction:column;
@@ -749,6 +758,8 @@
             max-width: 30px;
             display: inline-block;
             transition: transform 0.3s ease;
+            position: relative;
+            top: -5px;
         }
 
         .linkedin-icon:hover {
@@ -761,8 +772,13 @@
             padding-bottom: 2vh;
         }
 
-        .icon-div p{
-            margin-left: 2vw
+        .footer-links{
+            margin-left: 2vw;
+            text-decoration: none;
+        }
+
+        .footer-links:hover{
+            text-decoration: none;
         }
 
         @media (max-width: 600px) {
@@ -838,6 +854,10 @@
             }
 
             /* Page 1 */
+            .section-1{
+                background-size:cover;
+            }
+
             .section-1 h1 {
                 font-size: 3rem;
             }
@@ -979,7 +999,7 @@
                 background: url('assets/image_7.jpg') no-repeat center;
                 background-size: contain;
                 background-size: 175%;
-                background-position: 10% center;
+                background-position: -10% center;
                 min-height: 45vh;
             }
 
@@ -998,8 +1018,9 @@
             }
 
             .ipo-title{
-                text-align: start;
+                text-align: center;
                 font-size: 3rem;
+                padding-top:3vh;
             }
 
             .ipo-description{
@@ -1048,6 +1069,10 @@
                 padding: 3vh 0;
             }
 
+            .p3-section-1-title{
+                width:100%
+            }
+
             .p3-section-1-title h2{
                 font-size: 2rem;
                 padding:3vw;
@@ -1057,6 +1082,38 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+            }
+
+            .p3-section-2 {
+                flex-direction: column;
+                height: auto;
+                padding: 3vh 5vw; 
+                background-image: none;
+                text-align: center;
+            }
+
+            .section-text{
+                width: 100%;
+                padding-top:2vh;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .text-div-container{
+                width:100%;
+            }
+
+            .p3-section-2::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: auto;
+                background-image: url('assets/image_10.jpg');
+                background-size: contain;
+                background-size: 200%;
+                background-position: 95% center;
+                background-repeat: no-repeat;
+                min-height: 45vh;
             }
 
             .p3-section-1-img{
@@ -1097,11 +1154,6 @@
             .team-photo {
                 width: 20vw;
                 height: 20vw;
-            }
-
-            .section-text{
-                text-align: left;
-                text-justify: auto; 
             }
 
             .divider{
@@ -1386,7 +1438,7 @@
         <!-- Section 2 -->
         <div class="section p3-section-2">
             <div style="display:flex; flex-direction: column; width:100%; height: 100%;">
-                <div style="width:50%; height: 100%; display: flex; justify-content: center;">
+                <div class="text-div-container">
                     <p class="section-text">
                         With offices in Montreal and Toronto, our team has engaged with 
                         shareholders around the world on behalf of clients.
@@ -1509,8 +1561,8 @@
             <a href="https://www.linkedin.com/company/maisonbrison" target="_blank">
                 <img src="assets/linkedin_icon.svg" alt="LinkedIn" class="linkedin-icon">
             </a>
-            <p>Contact</p>
-            <p>Terms of use</p>
+            <a class="footer-links" href="mailto:info@maisonbrison.com">Contact</a>
+            <a class="footer-links" href="terms.html" target="_blank">Terms of use</a>
         </div>
         <p>Copyright &copy; 2025 MaisonBrison Communications</p>
         <p>All Rights Reserved.</p>
