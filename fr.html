@@ -1281,7 +1281,7 @@
         @media screen and (min-width: 600px) and (max-width: 1100px) and (orientation: portrait) 
         {
             :root{
-                font-size:2vw
+                font-size:1.2vh;
             }
 
             nav {
@@ -1316,6 +1316,10 @@
             .section-1 {
                 background-size: 160%;
                 height: 70vh;
+            }
+
+            .section-1 h1{
+                margin-top: 3vh;
             }
 
             .h2-style h2{
@@ -1378,6 +1382,13 @@
             .contact-us-title{
                 width: 95%;
                 padding-bottom: 0;
+            }
+
+            .section-3 .contact-us-div{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .button{
@@ -1444,7 +1455,11 @@
             }
 
             .p2-section-2-right{
-                width:100%
+                width:100%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .p2-section-2 {
@@ -1488,7 +1503,7 @@
 
             .ipo-description{
                 text-align:justify;
-                width:95%;
+                width:90%;
             }
 
             .services-title{
@@ -1566,10 +1581,11 @@
             }
 
             .section-text{
-                width: 100%;
-                font-size: 2rem;
+                width: 90%;
+                font-size: 1.7rem;
                 text-align: center;
                 padding:0;
+                padding-bottom: 1vh;
                 text-justify: inter-word; 
             }
 
@@ -1708,33 +1724,30 @@
         document.addEventListener("DOMContentLoaded", function () {
             const navLinks = document.querySelectorAll("nav ul li a");
             const pages = document.querySelectorAll(".page-1, .page-2, .page-3");
-
+    
             function showPage(index) {
                 pages.forEach((page, i) => {
-                    if (i === index) {
-                        page.style.display = "block";
-                    } else {
-                        page.style.display = "none";
-                    }
+                    page.style.display = (i === index) ? "block" : "none";
+                    navLinks[i]?.classList.remove("selected");
                 });
+                navLinks[index]?.classList.add("selected");
             }
-
+    
+            const savedIndex = localStorage.getItem("selectedPageIndex");
+            const initialIndex = savedIndex !== null ? parseInt(savedIndex) : 0;
+            showPage(initialIndex);
+    
             navLinks.forEach((link, index) => {
                 link.addEventListener("click", function (e) {
                     e.preventDefault();
-
-                    navLinks.forEach(nav => nav.classList.remove("selected"));
-
-                    this.classList.add("selected");
-
+    
+                    localStorage.setItem("selectedPageIndex", index);
+    
                     showPage(index);
                 });
             });
-
-            showPage(0);
         });
     </script>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const bioToggles = document.querySelectorAll(".bio-toggle");
@@ -1878,7 +1891,7 @@
         
         <!-- Section 2 -->
         <div class="section p2-section-2">
-            <div style="display:flex; flex-direction: row; padding:0px 20px; width:100%">
+            <div style="display:flex; flex-direction: row; width:100%">
                 <div class="p2-section-2-left"></div>
                 <div class="p2-section-2-right">
                     <h1 class="ipo-title">Introductions en bourse et fusions-acquisitions</h1>
